@@ -1,4 +1,6 @@
-<main class="container-fluid  d-flex flex-column  justify-content-center align-items-center">
+<app-menu></app-menu>
+
+<main class="container-fluid  d-flex flex-column  justify-content-center align-items-center content-login">
   <section class=" d-flex flex-column justify-content-center align-items-center img-side-left">
     <svg viewBox="0 0 24 24" fill="none" width="160" height="160" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -28,6 +30,7 @@
       </label>
       <br>
       <input type="email" name="email" id="email" class="form-control" aria-label="email" tabindex="1">
+      <p class="error">Erro: </p>
     </fieldset>
 
     <fieldset>
@@ -37,10 +40,19 @@
       <br>
       <input type="password" name="senha" id="senha" class="form-control" aria-label="senha"
         aria-describedby="senha de acesso" tabindex="2">
+      <p class="error">Erro: </p>
     </fieldset>
 
-    <fieldset>
-      <input type="submit" value="Entrar" tabindex="3">
+    <fieldset class="d-flex flex-row justify-content-between align-items-center gap-1 content-btn-login">
+      <input type="submit" value="Entrar" tabindex="3" class="btn btn-primary btn-submit">
+      <input type="reset" value="Limpar" tabindex="4" class="btn btn-primary btn-reset">
+    </fieldset>
+
+    <fieldset class="d-flex flex-column align-items-center gap-1">
+      <a href="" class="link-primary" target="_blank" rel="internal" aria-label="botão cadastrar">Cadastrar-se</a>
+      <a href="" class="link-primary" target="_blank" rel="internal" aria-label="botão limpar">Esqueci senha</a>
     </fieldset>
   </form>
 </main>
+
+<app-footer></app-footer>

@@ -4,8 +4,8 @@
 
 .img-side-left {
   height: calc(100vh - 25rem);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .login-form {
@@ -19,4 +19,72 @@
 .app-title {
   color: #802922;
   font-size: 2.25rem;
+}
+
+.content-btn-login {
+
+  margin-bottom: 1rem;
+
+  & :is(.btn-submit, .btn-reset) {
+    width: 9rem;
+  }
+}
+
+/* >= 375px */
+@media screen and (width >=23.4375rem) {
+  .content-btn-login {
+
+    & :is(.btn-submit, .btn-reset) {
+      width: 10.75rem;
+    }
+  }
+}
+
+/* >= 425px */
+@media screen and (width >=26.5625rem) {
+  .content-btn-login {
+
+    & :is(.btn-submit, .btn-reset) {
+      width: 12.25rem;
+    }
+  }
+}
+
+/* >= 600px */
+@media screen and (width >=37.5rem) {
+  .content-btn-login {
+    justify-content: space-around !important;
+  }
+}
+
+/* >= 800px */
+@media screen and (width >=50rem) {
+  .content-login {
+    width: 50%;
+  }
+}
+
+/* >= 1024px */
+@media screen and (width >=64rem) {
+  .content-login {
+    width: 30%;
+  }
+
+  .content-btn-login {
+
+    & :is(.btn-submit, .btn-reset) {
+      width: 9rem;
+    }
+  }
+}
+
+/* >= 1200px */
+@media screen and (width >=75rem) {
+  .img-side-left {
+    margin-bottom: 0;
+  }
+
+  .login-form {
+    margin-top: -2rem;
+  }
 }

@@ -2,6 +2,7 @@
 
 :root {
   --moss: #004040;
+  --error: #F24405;
 }
 
 html,
@@ -20,4 +21,13 @@ label {
 
 .clr-moss {
   color: var(--moss);
+}
+
+.bg-moss {
+  background-color: var(--moss);
+}
+
+.error {
+  color: var(--error);
+  display: none;
 }
