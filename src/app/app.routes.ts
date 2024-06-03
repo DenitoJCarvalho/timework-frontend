@@ -1,14 +1,27 @@
 import { Routes } from '@angular/router';
 
-import { LoginComponent } from './pages/login/login.component';
-import { WorksheetComponent } from './pages/worksheet/worksheet.component';
-import { NotFoundComponent } from './pages/not-found/not-found.component';
-
 export const routes: Routes = [
 
   { path: '', pathMatch: 'full', redirectTo: '/login' },
-  { path: 'login', component: LoginComponent, pathMatch: 'full' },
-  { path: 'worksheet', component: WorksheetComponent, pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent, pathMatch: 'full' }
+  {
+    path: 'login',
+    loadComponent: () => import('./pages/login/login.component').then(c => c.LoginComponent),
+    pathMatch: 'full',
+  },
+  {
+    path: 'register',
+    loadComponent: () => import('./pages/register-user/register-user.component').then(c => c.RegisterUserComponent),
+    pathMatch: 'full'
+  },
+  {
+    path: 'worksheet',
+    loadComponent: () => import('./pages/worksheet/worksheet.component').then(c => c.WorksheetComponent),
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    loadComponent: () => import('./pages/not-found/not-found.component').then(c => c.NotFoundComponent),
+    pathMatch: 'full'
+  }
 
 ];
