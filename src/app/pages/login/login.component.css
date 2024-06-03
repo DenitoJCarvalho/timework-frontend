@@ -1,3 +1,7 @@
+.content-login {
+  margin-top: 2.5rem;
+}
+
 :is(.img-side-left, .login-form) {
   width: 100%;
 }
@@ -68,7 +72,6 @@
 @media screen and (width >=64rem) {
   .content-login {
     width: 30%;
-    margin-top: 3.5rem;
   }
 
   .content-btn-login {
@@ -81,11 +84,23 @@
 
 /* >= 1200px */
 @media screen and (width >=75rem) {
+  .content-login {
+    height: calc(100vh - 5rem);
+  }
+
   .img-side-left {
-    margin-bottom: 0;
+    margin-bottom: 2rem;
   }
 
   .login-form {
     margin-top: -2rem;
+  }
+}
+
+/* >= 1400px */
+@media screen and (width >=87.5rem) {
+  .img-side-left {
+    margin-top: -5rem;
+    margin-bottom: 0;
   }
 }
