@@ -10,7 +10,7 @@
     <fieldset>
       <label for="username" class="form-label">Nome</label>
       <br>
-      <input type="text" id="username" formControlName="username" class="form-control" tabindex="1">
+      <input type="text" id="username" formControlName="username" class="form-control" tabindex="1" autocomplete="off">
       @if (
       formRegister.get('username')?.hasError('required')
       && formRegister.get('username')!.touched
@@ -57,7 +57,7 @@
     <fieldset>
       <label for="email" class="form-label">Email</label>
       <br>
-      <input type="email" id="email" formControlName="email" class="form-control" tabindex="3">
+      <input type="email" id="email" formControlName="email" class="form-control" tabindex="3" autocomplete="off">
 
       @if (
       formRegister.get('email')?.hasError('required')
@@ -95,7 +95,7 @@
     </fieldset>
 
     <fieldset>
-      <label for="" class="form-label">Tipo de usuário</label>
+      <label for="userType" class="form-label">Tipo de usuário</label>
       <br>
       <input type="text" id="userType" formControlName="userType" class="form-control" value="{{ userType }}" readonly>
     </fieldset>
