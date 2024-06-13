@@ -1,0 +1,20 @@
+.content-form-register {
+  position: absolute;
+  width: 100%;
+  padding: 1rem;
+  height: 80vh;
+  margin-top: 2.25rem;
+  font-family: var(--comic-neue);
+}
+
+.title-form {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.form-register {
+
+  & fieldset {
+    margin-bottom: 1rem;
+  }
+}

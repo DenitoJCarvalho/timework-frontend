@@ -1,1 +1,110 @@
-<p>register-user works!</p>
+<app-menu></app-menu>
+
+<main class="content-form-register">
+  <h1 class="title-form">
+    <strong>
+      Cadastrar Usuário
+    </strong>
+  </h1>
+  <form id="adicionarUsuario" class="form-register" [formGroup]="formRegister">
+    <fieldset>
+      <label for="username" class="form-label">Nome</label>
+      <br>
+      <input type="text" id="username" formControlName="username" class="form-control" tabindex="1">
+      @if (
+      formRegister.get('username')?.hasError('required')
+      && formRegister.get('username')!.touched
+      ) {
+      <small class="warning">O campo nome é obrigatório!</small>
+      }
+
+      @if (
+      formRegister.get('username')?.hasError('minlength')
+      && formRegister.get('username')!.touched
+      ) {
+      <small class="warning">O campo nome precisa ter pelo menos 3 caracteres!</small>
+      }
+
+      @if (
+      formRegister.get('username')?.hasError('maxlength')
+      && formRegister.get('username')!.touched
+      ) {
+      <small class="warning">O campo nome não pode ter mais que 50 caracteres!</small>
+      }
+    </fieldset>
+
+    <fieldset>
+      <label for="password" class="form-label">Senha</label>
+      <br>
+      <input type="password" id="password" formControlName="password" class="form-control" tabindex="2">
+
+      @if (
+      formRegister.get('password')?.hasError('required')
+      && formRegister.get('password')!.touched
+      ) {
+      <small class="warning">O campo senha é obrigatório!</small>
+      }
+
+      @if (
+      formRegister.get('password')?.hasError('minlength')
+      && formRegister.get('password')!.touched
+      ) {
+      <small class="warning">Senha precisa ter no minímo 6 caracteres!</small>
+      }
+
+    </fieldset>
+
+    <fieldset>
+      <label for="email" class="form-label">Email</label>
+      <br>
+      <input type="email" id="email" formControlName="email" class="form-control" tabindex="3">
+
+      @if (
+      formRegister.get('email')?.hasError('required')
+      && formRegister.get('email')!.touched
+      ) {
+      <small class="warning">O campo email é obrigatório!</small>
+      }
+
+      @if (
+      formRegister.get('email')?.hasError('email')
+      && formRegister.get('email')!.touched
+      ) {
+      <small class="warning">Email inválido.</small>
+      }
+    </fieldset>
+
+    <fieldset>
+      <label for="enterprise" class="form-label">Empresa</label>
+      <br>
+      <input type="text" id="enterprise" formControlName="enterprise" class="form-control" tabindex="4">
+
+      @if (
+      formRegister.get('enterprise')?.hasError('required')
+      && formRegister.get('enterprise')!.touched
+      ) {
+      <small class="warning">O campo empesa é obrigatório!</small>
+      }
+
+      @if (
+      formRegister.get('enterprise')?.hasError('maxlength')
+      && formRegister.get('enterprise')!.touched
+      ) {
+      <small class="warning">O campo enterprise pode ter no máximo 40 caracteres!</small>
+      }
+    </fieldset>
+
+    <fieldset>
+      <label for="" class="form-label">Tipo de usuário</label>
+      <br>
+      <input type="text" id="userType" formControlName="userType" class="form-control" value="{{ userType }}" readonly>
+    </fieldset>
+
+    <fieldset>
+      <button>Salvar</button>
+      <button type="reset">Limpar</button>
+    </fieldset>
+  </form>
+
+</main>
+<app-footer></app-footer>
