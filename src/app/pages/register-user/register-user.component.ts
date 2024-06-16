@@ -28,9 +28,6 @@ export class RegisterUserComponent {
       Validators.required,
       Validators.minLength(6)
     ]),
-    confirmPassword: new FormControl('', [
-      Validators.required,
-    ]),
     email: new FormControl('', [
       Validators.required,
       Validators.email,
@@ -41,5 +38,9 @@ export class RegisterUserComponent {
     ]),
     userType: new FormControl(this.userType)
   });
+
+  public registerUser() {
+    console.log(this.formRegister.value);
+  }
 
 }
