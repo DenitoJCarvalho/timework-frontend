@@ -6,7 +6,7 @@
       Cadastrar Usuário
     </strong>
   </h1>
-  <form id="adicionarUsuario" class="form-register" [formGroup]="formRegister">
+  <form id="adicionarUsuario" class="form-register" [formGroup]="formRegister" (ngSubmit)="registerUser()">
     <fieldset>
       <label for="username" class="form-label">Nome</label>
       <br>
@@ -100,9 +100,11 @@
       <input type="text" id="userType" formControlName="userType" class="form-control" value="{{ userType }}" readonly>
     </fieldset>
 
-    <fieldset>
-      <button type="submit" (click)="registerUser()">Salvar</button>
-      <button type="reset">Limpar</button>
+    <fieldset class="content-forms-btn">
+      <button type="submit" [disabled]="formRegister.invalid" class="btn btn-primary">Salvar</button>
+      <button type="reset" class="btn btn-outline-primary">Limpar</button>
+      <br>
+
     </fieldset>
   </form>
 

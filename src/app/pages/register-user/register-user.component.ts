@@ -39,8 +39,12 @@ export class RegisterUserComponent {
     userType: new FormControl(this.userType)
   });
 
-  public registerUser() {
-    console.log(this.formRegister.value);
+  registerUser() {
+    if (this.formRegister.value) {
+      console.log(this.formRegister.value);
+    } else {
+      console.log("Dados inválidos.")
+    }
   }
 
 }
