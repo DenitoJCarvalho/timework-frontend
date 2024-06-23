@@ -4,6 +4,8 @@ import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angula
 import { MenuComponent } from '../../components/menu/menu.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 
+import { LoginService } from '../../services/login.service';
+
 @Component({
   selector: 'app-register-user',
   standalone: true,
@@ -16,6 +18,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 })
 export class RegisterUserComponent {
 
+  private loginService = inject(LoginService);
   userType: string = 'user';
 
   formRegister = new FormGroup({
@@ -41,7 +44,7 @@ export class RegisterUserComponent {
 
   registerUser() {
     if (this.formRegister.value) {
-      console.log(this.formRegister.value);
+      console.log(this.loginService.addUser());
     } else {
       console.log("Dados inválidos.")
     }
