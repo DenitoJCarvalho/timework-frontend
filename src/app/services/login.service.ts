@@ -7,11 +7,11 @@ import { environment } from '../../environments/environments';
 })
 export class LoginService {
 
-  private local = environment.apiLocal;
+  private local = environment;
   private http = inject(HttpClient);
 
 
   addUser() {
-    console.log(this.local);
+    console.log(this.local.postUser);
   }
 }
